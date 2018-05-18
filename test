@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+echo "hoi"
+
 if [ "$1" == "install" ]; then
     echo "install"
 else
