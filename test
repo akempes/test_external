@@ -14,7 +14,7 @@ else
 
     if [ -d $DOCKER_DIR ]; then
         cd $DOCKER_DIR
-        var = "$(bash vessel \"$PROJECT_DIR\" \"$@\")"
+        var="$(bash vessel \"$PROJECT_DIR\" \"$@\")"
         echo "$var"
         echo -e "$var"
         cd $PROJECT_DIR
