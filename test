@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
-echo "hoi"
-
 if [ "$1" == "install" ]; then
     
-    echo "install"
-
     if [ "$3" == "" ]; then
         
-        echo -e "\033[31mNo project name is specified! Correct usage: \033[2m7 install [framework] [project_name]\033[0m"
+        echo -e "\033[31mNo project name is specified! Correct usage: 7 install [framework] [project_name]\033[0m"
     
     elif [ "$2" == "laravel" ]; then
         
