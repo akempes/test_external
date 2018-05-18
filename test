@@ -3,18 +3,38 @@
 echo "hoi"
 
 if [ "$1" == "install" ]; then
-
+    
     echo "install"
+
+    if [ "$3" == "" ]; then
+        
+        echo -e "\033[31mNo project name is specified! Correct usage: \033[2m7 install [framework] [project_name]\033[0m"
+    
+    elif [ "$2" == "laravel" ]; then
+        
+        echo "install laravel"
+
+    elif [ "$2" == "wordpress" ]; then
+
+        echo "install wordpress"
+
+    elif [ "$2" == "none" ]; then
+
+        echo "install none"
+
+    else
+
+        echo -e "\033[31mThis framework not supported! Supported frameworks are: none, laravel and wordpress\033[0m"
+
+    fi
 
 else
 
-    echo '7lab'
     PROJECT_DIR=$(pwd)
     DOCKER_DIR="7lab-docker"
 
     if [ -d $DOCKER_DIR ]; then
         cd $DOCKER_DIR
-        FORCE_COLOR=1
         bash vessel "$PROJECT_DIR" "$@"
         cd $PROJECT_DIR
     else
