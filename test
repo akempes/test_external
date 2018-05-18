@@ -14,6 +14,7 @@ else
 
     if [ -d $DOCKER_DIR ]; then
         cd $DOCKER_DIR
+        FORCE_COLOR=1
         bash vessel "$PROJECT_DIR" "$@"
         cd $PROJECT_DIR
     else
