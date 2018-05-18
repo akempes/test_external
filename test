@@ -14,7 +14,9 @@ else
 
     if [ -d $DOCKER_DIR ]; then
         cd $DOCKER_DIR
-        bash vessel "$PROJECT_DIR" "$@"
+        var = $(bash vessel "$PROJECT_DIR" "$@")
+        echo $var
+        echo -e $var
         cd $PROJECT_DIR
     else
         echo -e "\033[31mNo '$DOCKER_DIR' directory found within current working directory '$PROJECT_DIR'\033[0m"
