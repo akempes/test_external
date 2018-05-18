@@ -3,8 +3,11 @@
 echo "hoi"
 
 if [ "$1" == "install" ]; then
+
     echo "install"
+
 else
+
     echo '7lab'
     PROJECT_DIR=$(pwd)
     DOCKER_DIR="7lab-docker"
