@@ -72,7 +72,7 @@ elif [ "$2" == "wordpress" ]; then
     rm latest.zip
 
     gitinit
-    # vessel init
+    vessel init
 
     echo "Starting application"
     sleep 5
