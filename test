@@ -1,4 +1,18 @@
 #!/usr/bin/env bash
+
+function initProject() {
+
+    mkdir $2
+    cd $2
+    # git init
+    # git add -A && git commit -m "Initial commit"
+
+}
+
+function success() {
+    echo -e "\033[1m\033[32mInstallation completed!\033[0m"
+}
+
 if [ "$2" == "" ]; then
     
     echo -e "\033[31mNo project name is specified! Correct usage: 7 install [framework] [project_name]\033[0m"
@@ -32,16 +46,3 @@ else
     echo -e "\033[31mThis framework not supported! Supported frameworks are: none, laravel and wordpress\033[0m"
 
 fi
-
-function initProject() {
-
-    mkdir $2
-    cd $2
-    # git init
-    # git add -A && git commit -m "Initial commit"
-
-}
-
-function success() {
-    echo -e "\033[1m\033[32mInstallation completed!\033[0m"
-}
