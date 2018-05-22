@@ -25,10 +25,9 @@ elif [ "$2" == "laravel" ]; then
     initproject $3
     echo "hoi"
     echo $(pwd)
-    git clone https://github.com/laravel/laravel.git
-    # cd working/laravel-master
-    # composer install
-    # success
+    git clone https://github.com/laravel/laravel.git ./
+    7 init
+    success
 
 elif [ "$2" == "wordpress" ]; then
 
