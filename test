@@ -13,6 +13,19 @@ function gitinit() {
 
 }
 
+function vessel() {
+    PROJECT_DIR=$(pwd)
+    DOCKER_DIR="7lab-docker"
+
+    if [ -d $DOCKER_DIR ]; then
+        cd $DOCKER_DIR
+        bash vessel "$PROJECT_DIR" "$@"
+        cd $PROJECT_DIR
+    else
+        echo -e "\033[31mNo '$DOCKER_DIR' directory found within current working directory '$PROJECT_DIR'\033[0m"
+    fi
+}
+
 function success() {
     echo -e "\033[1m\033[32mInstallation completed!\033[0m"
 }
@@ -27,12 +40,11 @@ elif [ "$2" == "laravel" ]; then
     
     echo "Installing Laravel"
     makeprojectfolder $3
-    git clone --depth=1 https://github.com/laravel/laravel.git ./
+    git clone https://github.com/laravel/laravel.git ./
     rm -rf !$/.git
     
     gitinit
-
-    7cmd init
+    vessel init
     success
 
 elif [ "$2" == "wordpress" ]; then
