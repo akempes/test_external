@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function initproject() {
+function makeprojectfolder() {
 
     mkdir "$1"
     cd "$1"
@@ -29,26 +29,26 @@ if [ "$3" == "" ]; then
 elif [ "$2" == "laravel" ]; then
     
     echo "Installing Laravel"
-    initproject $3
+    makeprojectfolder $3
     git clone --depth=1 https://github.com/laravel/laravel.git ./
     rm -rf !$/.git
     
-    addmodule
+    # addmodule
 
-    7 init
+    # 7 init
     success
 
 elif [ "$2" == "wordpress" ]; then
 
     echo "Installing Wordpress"
-    initproject $3
+    makeprojectfolder $3
     success
 
 
 elif [ "$2" == "none" ]; then
 
     echo "Creating an empty project"
-    initproject $3
+    makeprojectfolder $3
     addmodule
     success
 
