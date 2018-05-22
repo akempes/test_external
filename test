@@ -4,12 +4,19 @@ function initproject() {
 
     mkdir "$1"
     cd "$1"
+
+}
+
+function addmodule() {
     git init
     git add -A && git commit -m "Initial commit"
+    git submodule add -b 2.0 https://app.buddy.works/7lab/7lab-docker
+    git add -A && git commit -m "Submodule added"
 
 }
 
 function success() {
+
     echo -e "\033[1m\033[32mInstallation completed!\033[0m"
 }
 
@@ -21,25 +28,28 @@ if [ "$3" == "" ]; then
 
 elif [ "$2" == "laravel" ]; then
     
-    echo "install laravel"
+    echo "Installing Laravel"
     initproject $3
-    echo "hoi"
-    echo $(pwd)
-    git clone https://github.com/laravel/laravel.git ./
+    git clone --depth=1 https://github.com/laravel/laravel.git ./
+    rm -rf !$/.git
+    
+    addmodule
+
     7 init
     success
 
 elif [ "$2" == "wordpress" ]; then
 
-    echo "install wordpress"
+    echo "Installing Wordpress"
     initproject $3
     success
 
 
 elif [ "$2" == "none" ]; then
 
-    echo "install empty project"
+    echo "Creating an empty project"
     initproject $3
+    addmodule
     success
 
 else
