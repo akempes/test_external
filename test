@@ -60,7 +60,7 @@ elif [ "$2" == "wordpress" ]; then
     makeprojectfolder $3
 
     if hash wget 2>/dev/null; then
-        echo 'wget todo'
+        wget https://wordpress.org/latest.zip
     elif hash curl 2>/dev/null; then
         curl https://wordpress.org/latest.zip > latest.zip
     else
