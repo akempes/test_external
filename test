@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 function makeprojectfolder() {
+    echo "Creating project folder"
     mkdir "$1"
     cd "$1"
 }
 
 function gitinit() {
+    echo "Add git & submodule"
     git init
     git add -A && git commit -m "Initial commit"
     git submodule add -b 2.0 https://app.buddy.works/7lab/7lab-docker
@@ -40,7 +42,7 @@ elif [ "$2" == "laravel" ]; then
     
     echo "Installing Laravel"
     makeprojectfolder $3
-    git clone https://github.com/laravel/laravel.git ./
+    git clone https://github.com/laravel/laravel.git $(pwd)
     rm -rf !$/.git
     
     gitinit
