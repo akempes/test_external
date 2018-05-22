@@ -2,8 +2,8 @@
 
 function initproject() {
 
-    mkdir $2
-    cd $2
+    mkdir $3
+    cd $3
     # git init
     # git add -A && git commit -m "Initial commit"
 
@@ -13,29 +13,32 @@ function success() {
     echo -e "\033[1m\033[32mInstallation completed!\033[0m"
 }
 
-if [ "$2" == "" ]; then
+echo "$@"
+
+cd $1
+
+if [ "$3" == "" ]; then
     
     echo -e "\033[31mNo project name is specified! Correct usage: 7 install [framework] [project_name]\033[0m"
 
-elif [ "$1" == "laravel" ]; then
+elif [ "$2" == "laravel" ]; then
     
     echo "install laravel"
     initproject
     echo "hoi"
-    echo $(pwd)
     # git clone https://github.com/laravel/laravel.git ./
     # cd working/laravel-master
     # composer install
     # success
 
-elif [ "$1" == "wordpress" ]; then
+elif [ "$2" == "wordpress" ]; then
 
     echo "install wordpress"
     initproject
     success
 
 
-elif [ "$1" == "none" ]; then
+elif [ "$2" == "none" ]; then
 
     echo "install empty project"
     initproject
