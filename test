@@ -47,6 +47,7 @@ elif [ "$2" == "laravel" ]; then
     
     gitinit
     # vessel init
+    open http://localhost/
     success
 
 elif [ "$2" == "wordpress" ]; then
