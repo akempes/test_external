@@ -75,7 +75,7 @@ elif [ "$2" == "wordpress" ]; then
     vessel init
 
     echo "Starting application"
-    sleep 10
+    sleep 15
     open http://localhost/
     success
 
