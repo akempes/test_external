@@ -22,9 +22,8 @@ elif [ "$1" == "laravel" ]; then
     echo "install laravel"
     initproject
     echo "hoi"
-    # curl https://github.com/laravel/laravel/archive/master.zip
-    # unzip master.zip -d working
-    # rm master.zip
+    echo $(pwd)
+    # git clone https://github.com/laravel/laravel.git ./
     # cd working/laravel-master
     # composer install
     # success
