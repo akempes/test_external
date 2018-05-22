@@ -43,10 +43,10 @@ elif [ "$2" == "laravel" ]; then
     echo "Installing Laravel"
     makeprojectfolder $3
     git clone https://github.com/laravel/laravel.git $(pwd)
-    rm -rf !$/.git
+    rm -rf .git
     
     gitinit
-    vessel init
+    # vessel init
     success
 
 elif [ "$2" == "wordpress" ]; then
