@@ -47,6 +47,10 @@ elif [ "$2" == "laravel" ]; then
     
     gitinit
     vessel init
+    rm .env.bak
+    git add -A && git commit -m "Dependencies installed"
+    echo "Starting application"
+    sleep 5
     open http://localhost/
     success
 
@@ -54,6 +58,25 @@ elif [ "$2" == "wordpress" ]; then
 
     echo "Installing Wordpress"
     makeprojectfolder $3
+
+    if hash wget 2>/dev/null; then
+        echo 'wget todo'
+    elif hash curl 2>/dev/null; then
+        curl https://wordpress.org/latest.zip > latest.zip
+    else
+        echo -e "\033[31mInstall wget or curl first.\033[0m"
+    fi
+
+    unzip latest.zip
+    mv ./wordpress ./public
+    rm latest.zip
+
+    gitinit
+    # vessel init
+
+    echo "Starting application"
+    sleep 5
+    open http://localhost/
     success
 
 
