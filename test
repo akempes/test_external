@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-if [ "$3" == "" ]; then
+if [ "$2" == "" ]; then
     
     echo -e "\033[31mNo project name is specified! Correct usage: 7 install [framework] [project_name]\033[0m"
 
-elif [ "$2" == "laravel" ]; then
+elif [ "$1" == "laravel" ]; then
     
     echo "install laravel"
 
-elif [ "$2" == "wordpress" ]; then
+elif [ "$1" == "wordpress" ]; then
 
     echo "install wordpress"
 
-elif [ "$2" == "none" ]; then
+elif [ "$1" == "none" ]; then
 
     echo "install none"
 
