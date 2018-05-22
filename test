@@ -46,7 +46,7 @@ elif [ "$2" == "laravel" ]; then
     rm -rf .git
     
     gitinit
-    # vessel init
+    vessel init
     open http://localhost/
     success
 
