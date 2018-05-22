@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
 function makeprojectfolder() {
-
     mkdir "$1"
     cd "$1"
-
 }
 
-function addmodule() {
+function gitinit() {
     git init
     git add -A && git commit -m "Initial commit"
     git submodule add -b 2.0 https://app.buddy.works/7lab/7lab-docker
@@ -16,7 +14,6 @@ function addmodule() {
 }
 
 function success() {
-
     echo -e "\033[1m\033[32mInstallation completed!\033[0m"
 }
 
@@ -33,7 +30,7 @@ elif [ "$2" == "laravel" ]; then
     git clone --depth=1 https://github.com/laravel/laravel.git ./
     rm -rf !$/.git
     
-    addmodule
+    gitinit
 
     7cmd init
     success
@@ -49,7 +46,7 @@ elif [ "$2" == "none" ]; then
 
     echo "Creating an empty project"
     makeprojectfolder $3
-    addmodule
+    gitinit
     success
 
 else
