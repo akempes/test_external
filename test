@@ -1,40 +1,22 @@
 #!/usr/bin/env bash
-
-if [ "$1" == "install" ]; then
+if [ "$3" == "" ]; then
     
-    if [ "$3" == "" ]; then
-        
-        echo -e "\033[31mNo project name is specified! Correct usage: 7 install [framework] [project_name]\033[0m"
+    echo -e "\033[31mNo project name is specified! Correct usage: 7 install [framework] [project_name]\033[0m"
+
+elif [ "$2" == "laravel" ]; then
     
-    elif [ "$2" == "laravel" ]; then
-        
-        echo "install laravel"
+    echo "install laravel"
 
-    elif [ "$2" == "wordpress" ]; then
+elif [ "$2" == "wordpress" ]; then
 
-        echo "install wordpress"
+    echo "install wordpress"
 
-    elif [ "$2" == "none" ]; then
+elif [ "$2" == "none" ]; then
 
-        echo "install none"
-
-    else
-
-        echo -e "\033[31mThis framework not supported! Supported frameworks are: none, laravel and wordpress\033[0m"
-
-    fi
+    echo "install none"
 
 else
 
-    PROJECT_DIR=$(pwd)
-    DOCKER_DIR="7lab-docker"
-
-    if [ -d $DOCKER_DIR ]; then
-        cd $DOCKER_DIR
-        bash vessel "$PROJECT_DIR" "$@"
-        cd $PROJECT_DIR
-    else
-        echo -e "\033[31mNo '$DOCKER_DIR' directory found within current working directory '$PROJECT_DIR'\033[0m"
-    fi
+    echo -e "\033[31mThis framework not supported! Supported frameworks are: none, laravel and wordpress\033[0m"
 
 fi
