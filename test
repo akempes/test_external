@@ -33,9 +33,9 @@ elif [ "$2" == "laravel" ]; then
     git clone --depth=1 https://github.com/laravel/laravel.git ./
     rm -rf !$/.git
     
-    # addmodule
+    addmodule
 
-    # 7 init
+    7cmd init
     success
 
 elif [ "$2" == "wordpress" ]; then
