@@ -2,18 +2,16 @@
 
 function initproject() {
 
-    mkdir $3
-    cd $3
-    # git init
-    # git add -A && git commit -m "Initial commit"
+    mkdir "$1"
+    cd "$1"
+    git init
+    git add -A && git commit -m "Initial commit"
 
 }
 
 function success() {
     echo -e "\033[1m\033[32mInstallation completed!\033[0m"
 }
-
-echo "$@"
 
 cd $1
 
@@ -24,7 +22,7 @@ if [ "$3" == "" ]; then
 elif [ "$2" == "laravel" ]; then
     
     echo "install laravel"
-    initproject
+    initproject $3
     echo "hoi"
     # git clone https://github.com/laravel/laravel.git ./
     # cd working/laravel-master
@@ -34,14 +32,14 @@ elif [ "$2" == "laravel" ]; then
 elif [ "$2" == "wordpress" ]; then
 
     echo "install wordpress"
-    initproject
+    initproject $3
     success
 
 
 elif [ "$2" == "none" ]; then
 
     echo "install empty project"
-    initproject
+    initproject $3
     success
 
 else
