@@ -6,21 +6,42 @@ if [ "$2" == "" ]; then
 elif [ "$1" == "laravel" ]; then
     
     echo "install laravel"
+    initProject
+    curl https://github.com/laravel/laravel/archive/master.zip
+    # unzip master.zip -d working
+    # rm master.zip
+    # cd working/laravel-master
+    # composer install
+    # success
 
 elif [ "$1" == "wordpress" ]; then
 
     echo "install wordpress"
+    initProject
+    success
+
 
 elif [ "$1" == "none" ]; then
 
-    echo "install none"
-    mkdir $2
-    cd $2
-    git init
-    
+    echo "install empty project"
+    initProject
+    success
 
 else
 
     echo -e "\033[31mThis framework not supported! Supported frameworks are: none, laravel and wordpress\033[0m"
 
 fi
+
+function initProject() {
+
+    mkdir $2
+    cd $2
+    # git init
+    # git add -A && git commit -m "Initial commit"
+
+}
+
+function success() {
+    echo -e "\033[1m\033[32mInstallation completed!\033[0m"
+}
