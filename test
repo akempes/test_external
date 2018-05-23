@@ -90,6 +90,9 @@ elif [ "$2" == "none" ]; then
     vessel up
     sleep 5
     open http://localhost/
+    echo -e "\033[1m\033[32mInitialization complete and containers are running!\033[0m"
+    echo -e "\033[33mSome projects need aditional actions like importing a database or running a build script. Check the project's readme file.\033[0m"
+    echo -e "\033[2mRun '7 help' to discover all available shortcuts.\033[0m"
     success
 
 else
