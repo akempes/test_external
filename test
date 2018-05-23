@@ -84,6 +84,8 @@ elif [ "$2" == "none" ]; then
 
     echo "Creating an empty project"
     makeprojectfolder $3
+    mkdir "public"
+    echo "<html><head><title>Welcome @7lab</title></head><body><p>It's a nice day to start a new project, isn't it?</p></body></html>" > ./public/index.html
     gitinit
     success
 
