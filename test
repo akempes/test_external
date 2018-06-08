@@ -68,8 +68,10 @@ elif [ "$2" == "wordpress" ]; then
     fi
 
     unzip latest.zip
-    mv ./wordpress ../
+    mv ./wordpress/* ./
+    mv ./wordpress/.* ./
     rm latest.zip
+    rm -rf ./wordpress
 
     gitinit
     vessel init
