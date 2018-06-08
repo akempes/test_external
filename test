@@ -68,7 +68,7 @@ elif [ "$2" == "wordpress" ]; then
     fi
 
     unzip latest.zip
-    mv ./wordpress ./public
+    mv ./wordpress ./
     rm latest.zip
 
     gitinit
@@ -85,7 +85,7 @@ elif [ "$2" == "none" ]; then
     echo "Creating an empty project"
     makeprojectfolder $3
     mkdir "public"
-    echo "<html><head><title>Welcome @7lab</title></head><body><p>It's a nice day to start a new project, isn't it?</p></body></html>" > ./public/index.html
+    echo "<html><head><title>Welcome @7lab</title></head><body><p>It's a nice day to start a new project, isn't it?</p></body></html>" > ./index.html
     gitinit
     vessel up
     sleep 5
